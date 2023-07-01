@@ -1,0 +1,94 @@
+/*bst practise for css*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*:root {
+  --first_color: black;
+  --second_color: red;
+  --third_color: green;
+  --forth_color: pink;
+  --fifth_color: yellow;
+  --sixth_color: blue;
+}*/
+
+/*===========================================
+This is the body configuration
+*/
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*===========================================
+This is the div configuration
+*/
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  position: relative;
+  border: solid 0;
+  border-radius: 50%;
+}
+
+.app::after,
+.app::before {
+  content: "";
+  position: absolute;
+  border: solid 0;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #00f0f0,
+    #00ff00,
+    #0000ff,
+    #ff0000,
+    #00f0f0,
+    #00ff00,
+    #0000ff,
+    #f00f0f
+  );
+  z-index: -1;
+  scale: 1.02; /*zoom of the background*/
+  background-size: 500%; /*tall of the background*/
+  animation: mouve 20s infinite alternate-reverse; /* definir nom de l'animation, durée, sens*/
+}
+
+.app::after {
+  filter: blur(10px); /*flow for after*/
+}
+
+@keyframes mouve {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.app_son {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: solid 0;
+  border-radius: 50%;
+}
